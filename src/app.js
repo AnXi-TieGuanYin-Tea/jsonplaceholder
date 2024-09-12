@@ -3,11 +3,11 @@ const clone = require('clone')
 const data = require('../data.json')
 
 const app = jsonServer.create()
-const router = jsonServer.router(clone(data))
+const router = jsonServer.router(clone(data), { _isFake: true })
 
 app.use((req, res, next) => {
   if (req.path === '/') return next()
-  router.db.object = clone(data)
+  router.db.setState(clone(data))
   next()
 })
 

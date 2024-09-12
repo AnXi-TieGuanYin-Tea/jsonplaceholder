@@ -1,156 +1,202 @@
 body {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #2C3E50;
-  margin: 0;
-  font-size: 16px;
+  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: rgba(0, 0, 0, 0.84);
   line-height: 1.5;
 }
 
-.narrow {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 1%;
-}
-
-.center {
-  text-align: center
-}
-
-.inline {
-  display: inline-block;
-}
-
-.fb-like{
-  position:relative;
-  top:-6px;
-}
-
-header {
-  color: #333;
-  text-align: center;
-  padding: 40px 1% 40px 1%;
-  font-size: 24px;
-  border-bottom: 1px solid #DDD;
-  margin-bottom: 40px;
-}
-
-h1 {
-  color: #2C3E50;
-  letter-spacing: .1em;
-  margin-bottom: 50px;
-}
-
-p {
-  font-weight: normal;
-}
-
-footer {
-  text-align: center;
-  border-top: 1px solid #DDD;
-}
-
-h2 {
-  margin-top: 40px;
-}
-
 a {
+  color: #1e87f0;
   text-decoration: none;
-  color: #1882BC;
+  border-bottom: 1px solid transparent;
+}
+
+div.announcement {
+  display: block;
+  padding: 1rem;
+  font-weight: bold;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+  text-align: center;
+  background: #ffe0b2;
+  color: #e65100;
+}
+
+div.announcement a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+div.announcement a:hover {
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-button {
-  font-size: 18px;
+h1 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
 }
 
-pre, #result {
-  font-size: 16px;
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
 }
 
-code {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+h2 {
+  margin-top: 6rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: normal;
 }
 
-#result {
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto;
+header {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 999;
 }
 
-code, #result {
-  padding: 20px !important;
-  border-radius: 2px;
+nav {
+  margin: 0;
+  overflow-x: auto;
+  text-align: center;
+  border-width: 0 0 1px 0;
+  border-color: #e4e4e4;
+  border-style: solid;
 }
 
-ul {
+nav ul {
+  display: flex;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-li {
-  list-style: none
+nav li:first-of-type {
+  flex-grow: 1;
+  text-align: left;
 }
 
-p {
-  line-height: 1.6em
+nav li:first-of-type a {
+  padding-left: 0;
 }
 
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  width: 320px;
+nav li:last-of-type a {
+  padding-right: 0;
 }
 
-tr:hover {
-  background: #FCFCFC;
+nav li a {
+  display: block;
+  padding: 1.5rem;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.hljs {
+  padding: 1rem;
 }
 
 td:first-child {
-  width: 120px;
+  width: 8rem;
 }
 
-td {
-  border-top: 1px solid #EEE;
-  padding: 5px
+.container {
+  max-width: 60rem;
+  margin: auto;
+  padding: 0 1rem;
 }
 
-td.verb {
-  font-weight: bold;
+.hero {
+  padding: 6rem 0;
+  text-align: center;
 }
 
-a.more {
-  text-decoration: none;
+.sponsors {
+  margin-bottom: 2rem;
+  padding: 6rem 0;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #e4e4e4;
+  text-align: center;
 }
 
-.more {
-  display: none;
-  font-weight: 200;
-  margin: 40px 0 30px 0;
-  padding: 10px;
-  background-color: #00AE77;
+.sponsors h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  margin: auto;
+  border-radius: 0.2rem;
+  border: 1px dashed currentColor;
+}
+
+.box a {
+  display: inline-block;
+  padding: 4rem;
+  color: inherit;
+}
+
+.sponsors p {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+main {
+  margin-bottom: 6rem;
+}
+
+#run-button {
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border-width: 0;
+  border-radius: 0.25rem;
+  background-color: #1e87f0;
   color: white;
-  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.25s;
 }
 
-.more p {
-  margin: 0;
+#run-message {
+  opacity: 0;
+  transition: all 0.25s;
 }
 
-@media (max-width: 700px) {
-  header {
-    font-size: 22px;
-  }
+pre {
+  /* hack */
+  background: #f8f8f8;
+}
 
-  h1 {
-    font-size: 28px;
-  }
+code {
+  padding: 2rem !important;
+}
 
-  code, #result {
-    padding: 1% !important;
-  }
+ul {
+  list-style: none;
+}
+
+#result {
+  margin: 1.5rem 0 0;
+  height: 176px;
+  opacity: 0;
+  transition: all 0.25s;
+}
+
+footer {
+  padding: 6rem;
+  background-color: #f8fafc;
+  text-align: center;
 }
